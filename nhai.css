@@ -1,0 +1,122 @@
+    
+   
+   
+.radio-tile-group .card{
+    width: 15rem;
+    height: 15rem;
+    background-color: rgb(176 206 255 / 15%);
+}
+
+.radio-tile-group .card-body {
+    padding: -0.75rem !important;
+}
+
+.radio-tile:hover, .radio-button:hover+.radio-tile ,
+.radio-button:checked+.radio-tile{
+    background-color: #17a2b8;
+    border: 2px solid #17a2b8;
+    color: white;
+    transform: scale(1.1, 1.1);
+    
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 110vh; */
+}
+
+/* .radio-tile-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+} */
+
+.input-container {
+    position: relative;
+    height: 9rem;
+    width: 9rem;
+    margin: 0.5rem;
+
+}
+
+@media (max-width: 1402px) {
+
+    .input-container {
+        height: 9rem;
+        width: 9rem;
+        margin: 0.5rem;
+    }
+
+    .radio-tile {
+        padding: 2rem 2rem;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .input-container {
+        height: 4.8rem;
+        width: 4.8rem;
+        margin: 0.25rem;
+    }
+
+    .radio-tile {
+        padding: 2rem 2rem;
+    }
+
+}
+
+.radio-button {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    cursor: pointer;
+}
+
+
+.radio-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;    
+    width: 100%;
+    height: 100%;
+    border: 2px solid #17a2b8 ;
+    border-radius: 5px;
+    padding: 1rem;
+    transition: transform 300ms ease;
+}
+
+.radio-tile-label {
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #17a2b8;
+}
+
+
+
+
+.radio-tile-label {
+    color: black;
+}
+
+.radio-tile-group .input-container 
+.radio-button:checked + .radio-tile 
+.radio-tile-label {
+    color: white;
+}
+
+.filled{
+    color: #17a2b8 !important;
+}

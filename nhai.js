@@ -3,45 +3,88 @@ Handlebars.registerHelper("inc", function (value, options) {
 });
 
 $(document).ready(function(){
-	var zoneContext = {
-		zones: {
-			"Andhra Pradesh": { states: [] },
-			"Arunachal Pradesh": { states: [] },
-			"Assam": { states: [] },
-			"Bihar": { states: [] },
-			"Chhattisgarh": { states: [] },
-			"Goa": { states: [] },
-			"Gujarat": { states: [] },
-			"Haryana": { states: [] },
-			"Himachal Pradesh": { states: [] },
-			"Jharkhand": { states: [] },
-			"Karnataka": { states: [] },
-			"Kerala": { states: [] },
-			"Madhya Pradesh": { states: [] },
-			"Maharashtra": { states: [] },
-			"Manipur": { states: [] },
-			"Meghalaya": { states: [] },
-			"Mizoram": { states: [] },
-			"Nagaland": { states: [] },
-			"Odisha": { states: [] },
-			"Punjab": { states: [] },
-			"Rajasthan": { states: [] },
-			"Sikkim": { states: [] },
-			"Tamil Nadu": { states: [] },
-			"Telangana": { states: [] },
-			"Tripura": { states: [] },
-			"Uttar Pradesh": { states: [] },
-			"Uttarakhand": { states: [] },
-			"West Bengal": { states: [] },
-			"Andaman and Nicobar Islands": { states: [] },
-			"Chandigarh": { states: [] },
-			"Dadra and Nagar Haveli and Daman and Diu": { states: [] },
-			"Jammu and Kashmir": { states: [] },
-			"Ladakh": { states: [] },
-			"Lakshadweep": { states: [] },
-			"Delhi": { states: [] },
-			"Puducherry": { states: [] },
-		},
+	var highwayContext = {
+		highways: [
+			"National Highway 1",
+			"National Highway 2",
+			"National Highway 3",
+			"National Highway 4",
+			"National Highway 5",
+			"National Highway 6",
+			"National Highway 7",
+			"National Highway 8",
+			"National Highway 9",
+			"National Highway 10",
+			"National Highway 11",
+			"National Highway 12",
+			"National Highway 13",
+			"National Highway 14",
+			"National Highway 15",
+			"National Highway 16",
+			"National Highway 17",
+			"National Highway 18",
+			"National Highway 19",
+			"National Highway 20",
+			"National Highway 21",
+			"National Highway 22",
+			"National Highway 23",
+			"National Highway 24",
+			"National Highway 25",
+			"National Highway 26",
+			"National Highway 27",
+			"National Highway 28",
+			"National Highway 29",
+			"National Highway 30",
+			"National Highway 31",
+			"National Highway 32",
+			"National Highway 33",
+			"National Highway 34",
+			"National Highway 35",
+			"National Highway 36",
+			"National Highway 37",
+			"National Highway 38",
+			"National Highway 39",
+			"National Highway 40",
+			"National Highway 41",
+			"National Highway 42",
+			"National Highway 43",
+			"National Highway 44",
+			"National Highway 45",
+			"National Highway 46",
+			"National Highway 47",
+			"National Highway 48",
+			"National Highway 49",
+			"National Highway 50",
+			"National Highway 51",
+			"National Highway 52",
+			"National Highway 53",
+			"National Highway 54",
+			"National Highway 55",
+			"National Highway 56",
+			"National Highway 57",
+			"National Highway 58",
+			"National Highway 59",
+			"National Highway 60",
+			"National Highway 61",
+			"National Highway 62",
+			"National Highway 63",
+			"National Highway 64",
+			"National Highway 65",
+			"National Highway 66",
+			"National Highway 67",
+			"National Highway 68",
+			"National Highway 69",
+			"National Highway 70",
+			"National Highway 71",
+			"National Highway 73",
+			"National Highway 75",
+			"National Highway 77",
+			"National Highway 79",
+			"National Highway 81",
+			"National Highway 83",
+			"National Highway 85",
+			"National Highway 87",
+		],
 	};
 
 	// Retrieve the template data from the HTML (jQuery is used here).
@@ -282,7 +325,7 @@ $(document).ready(function(){
 			var template = $("#zoneTemplate").html();
 			// Compile the template data into a function
 			var templateScript = Handlebars.compile(template);
-			var html = templateScript(zoneContext);
+			var html = templateScript(highwayContext);
 			// Insert the HTML code into the page
 			$("#zonesRow").append(html);
 			$("#select-zone-tab").tab("show");
@@ -299,39 +342,9 @@ $(document).ready(function(){
 			);
 			$(".zone").on("click", function () {
 				$(this).prev().attr("checked", "true");
-				$(this).append(
-					'<i class="fa fa-check fa-3x text-success" aria-hidden="true"></i>'
-				);
-				$("#select-zone-tab i").first().addClass("filled");
-				$("#select-zone-tab span").first().addClass("filled");
-				var template = $("#divisionTemplate").html();
-				// Compile the template data into a function
-				var templateScript = Handlebars.compile(template);
-				var zoneId = $(this).find("label").html();
-				// console.log(zoneId);
-				var divs = zoneContext.zones[zoneId];
-				// console.log(divs);
-				var html = templateScript(divs);
-				$("#divisionRow").append(html);
-				$("#select-division-tab").tab("show");
-
-				//on hover show check mark
-				$(".division").hover(
-					function () {
-						$(this).append(
-							'<i class="fa fa-check fa-3x text-success" aria-hidden="true"></i>'
-						);
-					},
-					function () {
-						$(this).find("i").last().remove();
-					}
-				);
-				$(".division").on("click", function () {
-					$(this).prev().attr("checked", "true");
-					$("#select-division-tab i").first().addClass("filled");
-					$("#select-division-tab span").first().addClass("filled");
-					window.location.href = "./studentRegistration.html";
-				});
+				$("#select-division-tab i").first().addClass("filled");
+				$("#select-division-tab span").first().addClass("filled");
+				window.location.href = "./studentRegistration.html";
 			});
 		});
 	});

@@ -171,17 +171,7 @@
                                     <i class="fas fa-road  reg-ico"></i>
 
                                     <span class="reg-heading">
-                                        State
-                                    </span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link select-division" id="select-division-tab" data-toggle="tab"
-                                    href="#select-division" role="tab" aria-controls="select-division"
-                                    aria-selected="false">
-                                    <i class="fas fa-braille reg-ico"></i>
-                                    <span class="reg-heading">
-                                        District
+                                        Highway
                                     </span>
                                 </a>
                             </li>
@@ -321,13 +311,13 @@
                                                     <div id="zonesRow"
                                                         class="radio-tile-group row justify-content-center">
                                                         <script id="zoneTemplate" type="text/x-handlebars-template">
-                                                        {{#each zones}}
+                                                        {{#each highways}}
                                                         <div class="col-xs-6 col-md-4 mx-md-2  mx-lg-auto  col-lg-3 mt-3">
                                                             <div class="card bg-white mx-auto">
                                                                 <div class="card-body">
                                                                     <input id="{{inc @index}}" class="radio-button" type="radio" name="zone" />
                                                                     <div class="radio-tile zone">
-                                                                        <label for="{{inc @index}}" class="radio-tile-label">{{@key}}</label>
+                                                                        <label for="{{inc @index}}" class="radio-tile-label">{{this}}</label>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -339,39 +329,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                </section>
-                            </div>
-
-                            <div class="tab-pane" id="select-division" role="tabpanel"
-                                aria-labelledby="select-division-tab">
-                                <section class="mt-5">
-                                    <div id="corporate_form" class="container md-4">
-                                        <div class="row justify-content-center d-block">
-
-                                            <h3 class="text-center">Please Select your Preferred District</h3>
-
-                                            <section class="pt-3" id="divisions">
-                                                <div id="divisionRow"
-                                                    class="radio-tile-group row justify-content-center">
-                                                    <script id="divisionTemplate" type="text/x-handlebars-template">
-                                                            {{#each divisions}}
-                                                            <div class="col-xs-6 col-md-4 mx-md-2  mx-lg-auto  col-lg-3 mt-3">
-                                                                <div class="card bg-white mx-auto">
-                                                                    <div class="card-body">
-                                                                        <input id="{{inc @index}}" class="radio-button" type="radio" name="division" />
-                                                                        <div class="radio-tile division">
-                                                                            <label for="{{inc @index}}" class="radio-tile-label">{{this}}</label>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            {{/each}}
-                                                        </script>
-                                                </div>
-                                            </section>
-                                        </div>
-                                    </div>
-
                                 </section>
                             </div>
                         </div>

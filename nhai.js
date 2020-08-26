@@ -5,98 +5,42 @@ Handlebars.registerHelper("inc", function (value, options) {
 $(document).ready(function(){
 	var zoneContext = {
 		zones: {
-			"Central Railway": {
-				divisions: [
-					"Mumbai",
-					"Bhusawal",
-					"Pune ",
-					"Solapur",
-					"Nagpur CR",
-				],
-			},
-			"Northen Railway": {
-				divisions: [
-					"Delhi",
-					"Ambala",
-					"Firozpur",
-					"Lucknow",
-					"Moradabad",
-				],
-			},
-			"North Eastern Railway": {
-				divisions: ["Izzatnagar", "Lucknow NER", "Varanasi"],
-			},
-			"Northeast Frontier Railway": {
-				divisions: [
-					"Alipurdaur",
-					"Katihar",
-					"Rangiya",
-					"Lumding",
-					"Tinsukia",
-				],
-			},
-			"Eastern Railway": {
-				divisions: ["Howrah", "Sealdah", "Asansol", "Malda"],
-			},
-			"South Eastern Railway": {
-				divisions: ["Adra", "Chakradharpur", "Kharagpur", "Ranchi"],
-			},
-			"South Central Railway": {
-				divisions: ["Secunderabad", "Hyderabad", "Hazur Sahib Nanded"],
-			},
-			"Southern Railway": {
-				divisions: [
-					"Chennai",
-					"Tiruchirappalli",
-					"Madurai",
-					"Palakkad",
-					"Salem",
-					"Thiruvananthapurum",
-				],
-			},
-			"Western Railway": {
-				divisions: [
-					"Mumbai WR",
-					"Ratlam",
-					"Ahmedabad",
-					"Rajkot",
-					"Bhavnagar",
-					"Vadodara",
-				],
-			},
-			"South Western Railway": {
-				divisions: ["Hubballi", "Bengaluru", "Mysuru"],
-			},
-			"North Western Railway": {
-				divisions: ["Jaipur", "Ajmer", "Bikaner", "Jodhpur"],
-			},
-			"West Central Railway": {
-				divisions: ["Jabalpur", "Bhopal", "Kota "],
-			},
-			"North Central Railway": {
-				divisions: ["Prayagraj", "Agra", "Jhansi"],
-			},
-			"South East Central Railway": {
-				divisions: ["Bilaspur", "Raipur", "Nagpur SEC"],
-			},
-			"East Coast Railway": {
-				divisions: ["Khudra Road", "Sambalpur", "Rayagada"],
-			},
-			"East Central Railway": {
-				divisions: [
-					"Danapur",
-					"Dhanbad",
-					"Pt Deen Dayal Upadhyaya",
-					"Samastipur",
-					"Sonpur",
-				],
-			},
-			"Metro Railway": {
-				divisions: ["Line 1", "Line 2"],
-			},
-			"South Coast Railway": {
-				divisions: ["Vijaywada", "Guntur", "Guntakal"],
-			},
+			"Andhra Pradesh": { states: [] },
+			"Arunachal Pradesh": { states: [] },
+			"Assam": { states: [] },
+			"Bihar": { states: [] },
+			"Chhattisgarh": { states: [] },
+			"Goa": { states: [] },
+			"Gujarat": { states: [] },
+			"Haryana": { states: [] },
+			"Himachal Pradesh": { states: [] },
+			"Jharkhand": { states: [] },
+			"Karnataka": { states: [] },
+			"Kerala": { states: [] },
+			"Madhya Pradesh": { states: [] },
+			"Maharashtra": { states: [] },
+			"Manipur": { states: [] },
+			"Meghalaya": { states: [] },
+			"Mizoram": { states: [] },
+			"Nagaland": { states: [] },
+			"Odisha": { states: [] },
+			"Punjab": { states: [] },
+			"Rajasthan": { states: [] },
+			"Sikkim": { states: [] },
+			"Tamil Nadu": { states: [] },
+			"Telangana": { states: [] },
+			"Tripura": { states: [] },
+			"Uttar Pradesh": { states: [] },
+			"Uttarakhand": { states: [] },
+			"West Bengal": { states: [] },
+			"Andaman and Nicobar Islands": { states: [] },
+			"Chandigarh": { states: [] },
+			"Dadra and Nagar Haveli and Daman and Diu": { states: [] },
+			"Jammu and Kashmir": { states: [] },
+			"Ladakh": { states: [] },
+			"Lakshadweep": { states: [] },
+			"Delhi": { states: [] },
+			"Puducherry": { states: [] },
 		},
 	};
 

@@ -132,7 +132,7 @@ $(document).ready(function(){
 					"Collision Avoidance System",
 				],
 			},
-			Administration: {
+			"Administration": {
 				subcategories: [
 					"Administrative support to projects",
 					"Documentation of project records,staff and contracts",
@@ -144,7 +144,7 @@ $(document).ready(function(){
 					"Organization of annual and quarterly strategic meetings",
 				],
 			},
-			Finance: {
+			"Finance": {
 				subcategories: [
 					"Tracking and monitoring Expenditure (through spreadsheets)",
 					"Project Expenditure tracking ",

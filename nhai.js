@@ -87,12 +87,6 @@ $(document).ready(function(){
 		],
 	};
 
-	// Retrieve the template data from the HTML (jQuery is used here).
-	var template = $("#categoryTemplate").html();
-
-	// Compile the template data into a function
-	var templateScript = Handlebars.compile(template);
-
 	var context = {
 		categories: {
 			"Swachh  Bharat Mission": {
@@ -132,7 +126,7 @@ $(document).ready(function(){
 					"Collision Avoidance System",
 				],
 			},
-			"Administration": {
+			Administration: {
 				subcategories: [
 					"Administrative support to projects",
 					"Documentation of project records,staff and contracts",
@@ -144,7 +138,7 @@ $(document).ready(function(){
 					"Organization of annual and quarterly strategic meetings",
 				],
 			},
-			"Finance": {
+			Finance: {
 				subcategories: [
 					"Tracking and monitoring Expenditure (through spreadsheets)",
 					"Project Expenditure tracking ",
@@ -182,16 +176,22 @@ $(document).ready(function(){
 		},
 	};
 
+	// Retrieve the template data from the HTML (jQuery is used here).
+	var template = $("#zoneTemplate").html();
+
+	// Compile the template data into a function
+	var templateScript = Handlebars.compile(template);
+
 	$("#select-category-tab, #select-project-tab, #select-zone-tab, #select-division-tab").on('click', function(){
 			return false;
 	});
 	// console.log(context);
-	var html = templateScript(context);
+	var html = templateScript(highwayContext);
 
 	// Insert the HTML code into the page
-	$("#categoryRow").append(html);
+	$("#zonesRow").append(html);
 
-	$(".category").hover(
+	$(".zone").hover(
 		function () {
 			$(this).append(
 				'<i class="fa fa-check fa-3x text-success" aria-hidden="true"></i>'
@@ -202,34 +202,29 @@ $(document).ready(function(){
 		}
 	);
 
-	$(".category").on("click", function () {
+	$(".zone").on("click", function () {
 		$(this).prev().attr("checked", "true");
 		$(this).append(
 			'<i class="fa fa-check fa-3x text-success" aria-hidden="true"></i>'
 		);
-		$("#select-category-tab i").first().addClass("filled");
-		$("#select-category-tab span").first().addClass("filled");
-		var subHeading =
-			"Available Projects in: " + $(this).find("label").html();
-		$("#subCategory-heading").text(subHeading);
-		// console.log(subHeading);
+		$("#select-zone-tab i").first().addClass("filled");
+		$("#select-zone-tab span").first().addClass("filled");
 		$(this).append(
 			'<i class="fa fa-check text-success" aria-hidden="true"></i>'
 		);
-		var template = $("#subCategoryTemplate").html();
+		// Retrieve the template data from the HTML (jQuery is used here).
+		var template = $("#categoryTemplate").html();
+
 		// Compile the template data into a function
 		var templateScript = Handlebars.compile(template);
-		var catId = $(this).find("label").html();
-		console.log(catId);
-		var subCats = context.categories[catId];
-		console.log(subCats);
-		var html = templateScript(subCats);
-		// console.log(html);
-		// Insert the HTML code into the page
-		$("#subCategoryRow").append(html);
-		$("#select-project-tab").tab("show");
+		// console.log(context);
+		var html = templateScript(context);
 
-		$(".subcategory").hover(
+		// Insert the HTML code into the page
+		$("#categoryRow").append(html);
+		$("#select-category-tab").tab("show");
+
+		$(".category").hover(
 			function () {
 				$(this).append(
 					'<i class="fa fa-check fa-3x text-success" aria-hidden="true"></i>'
@@ -240,44 +235,34 @@ $(document).ready(function(){
 			}
 		);
 
-		$("#subCategory-work").on("click", function () {
-			Swal.fire({
-				title: "Submit your Project",
-				input: "text",
-				inputAttributes: {
-					autocapitalize: "off",
-				},
-				showCancelButton: true,
-				confirmButtonText: "Submit",
-				preConfirm: (proj) => {
-					$("#select-project-tab").first().addClass("filled");
-					$('#lblCustom').html(proj);
-					$("#customProj").removeClass('d-none');
-					// console.log($("#subcategoryCustom").next());
-					$("#subcategoryCustom").next().click();
-				},
-				allowOutsideClick: () => !Swal.isLoading(),
-			});
-		});
-
-		$(".subcategory").on("click", function () {
-			// console.log("subcat selected");
+		$(".category").on("click", function () {
 			$(this).prev().attr("checked", "true");
 			$(this).append(
 				'<i class="fa fa-check fa-3x text-success" aria-hidden="true"></i>'
 			);
-			$("#select-project-tab i").first().addClass("filled");
-			$("#select-project-tab span").first().addClass("filled");
-			// Retrieve the template data from the HTML (jQuery is used here).
-			var template = $("#zoneTemplate").html();
+			$("#select-category-tab i").first().addClass("filled");
+			$("#select-category-tab span").first().addClass("filled");
+			var subHeading =
+				"Available Projects in: " + $(this).find("label").html();
+			$("#subCategory-heading").text(subHeading);
+			// console.log(subHeading);
+			$(this).append(
+				'<i class="fa fa-check text-success" aria-hidden="true"></i>'
+			);
+			var template = $("#subCategoryTemplate").html();
 			// Compile the template data into a function
 			var templateScript = Handlebars.compile(template);
-			var html = templateScript(highwayContext);
+			var catId = $(this).find("label").html();
+			// console.log(catId);
+			var subCats = context.categories[catId];
+			// console.log(subCats);
+			var html = templateScript(subCats);
+			// console.log(html);
 			// Insert the HTML code into the page
-			$("#zonesRow").append(html);
-			$("#select-zone-tab").tab("show");
-			//on hover show check mark
-			$(".zone").hover(
+			$("#subCategoryRow").append(html);
+			$("#select-project-tab").tab("show");
+
+			$(".subcategory").hover(
 				function () {
 					$(this).append(
 						'<i class="fa fa-check fa-3x text-success" aria-hidden="true"></i>'
@@ -287,12 +272,33 @@ $(document).ready(function(){
 					$(this).find("i").last().remove();
 				}
 			);
-			$(".zone").on("click", function () {
+			// $("#subCategory-work").on("click", function () {
+			// 	Swal.fire({
+			// 		title: "Submit your Project",
+			// 		input: "text",
+			// 		inputAttributes: {
+			// 			autocapitalize: "off",
+			// 		},
+			// 		showCancelButton: true,
+			// 		confirmButtonText: "Submit",
+			// 		preConfirm: (proj) => {
+			// 			$("#select-project-tab").first().addClass("filled");
+			// 			$('#lblCustom').html(proj);
+			// 			$("#customProj").removeClass('d-none');
+			// 			// console.log($("#subcategoryCustom").next());
+			// 			$("#subcategoryCustom").next().click();
+			// 		},
+			// 		allowOutsideClick: () => !Swal.isLoading(),
+			// 	});
+			// });
+
+			$(".subcategory").on("click", function () {
+				console.log($(this).id);
 				$(this).prev().attr("checked", "true");
-				$("#select-division-tab i").first().addClass("filled");
-				$("#select-division-tab span").first().addClass("filled");
+				$("#select-project-tab i").first().addClass("filled");
+				$("#select-project-tab span").first().addClass("filled");
 				window.location.href = "./studentRegistration.html";
 			});
-		});
+		})
 	});
 })

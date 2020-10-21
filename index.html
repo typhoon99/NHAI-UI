@@ -148,13 +148,23 @@
 
                         <ul class="nav nav-tabs register-tab" id="register-tab" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link select-category active" id="select-category-tab" data-toggle="tab"
+                                <a class="nav-link select-zone active" id="select-zone-tab" data-toggle="tab"
+                                    href="#select-zone" role="tab" aria-controls="select-zone" aria-selected="false">
+                                    <i class="fas fa-road  reg-ico"></i>
+
+                                    <span class="reg-heading">
+                                        National Highway
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link select-category" id="select-category-tab" data-toggle="tab"
                                     href="#select-category" role="tab" aria-controls="select-category"
                                     aria-selected="false">
                                     <i class="fa fa-list-alt reg-ico"></i>
 
                                     <span class="reg-heading">
-                                        Category
+                                        Department
                                     </span>
                                 </a>
                             </li>
@@ -168,21 +178,42 @@
                                     </span>
                                 </a>
                             </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link select-zone" id="select-zone-tab" data-toggle="tab"
-                                    href="#select-zone" role="tab" aria-controls="select-zone" aria-selected="false">
-                                    <i class="fas fa-road  reg-ico"></i>
-
-                                    <span class="reg-heading">
-                                        Highway
-                                    </span>
-                                </a>
-                            </li>
                         </ul>
 
                         <div class="tab-content category-tab-content" id="register-tabContent">
-                            <div class="tab-pane active" id="select-category" role="tabpanel"
+
+                            <div class="tab-pane active" id="select-zone" role="tabpanel" aria-labelledby="select-zone-tab">
+                                <section class="mt-5">
+                                    <div class="container ">
+                                        <div id="corporate_form">
+                                            <div class="row justify-content-center">
+                                                <h3>Please Select your Preferred National Highway</h3>
+                                                <section class="pt-3" id="zones">
+                                                    <div id="zonesRow"
+                                                        class="radio-tile-group row justify-content-center">
+                                                        <script id="zoneTemplate" type="text/x-handlebars-template">
+                                                        {{#each highways}}
+                                                        <div class="col-xs-6 col-md-4 mx-md-2  mx-lg-auto  col-lg-3 mt-3">
+                                                            <div class="card bg-white mx-auto">
+                                                                <div class="card-body">
+                                                                    <input id="{{inc @index}}" class="radio-button" type="radio" name="zone" />
+                                                                    <div class="radio-tile zone">
+                                                                        <label for="{{inc @index}}" class="radio-tile-label">{{this}}</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        {{/each}}
+                                                    </script>
+                                                    </div>
+                                                </section>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+
+                            <div class="tab-pane" id="select-category" role="tabpanel"
                                 aria-labelledby="select-category-tab">
 
                                 <section>
@@ -251,7 +282,7 @@
                                                         </div>
                                                         {{/each}}
                                                         </script>
-                                                        <div id="customProj"
+                                                        <!-- <div id="customProj"
                                                             class="col-xs-6 col-md-4 mx-md-auto mx-lg-auto  col-lg-3 mt-3 d-none">
                                                             <div class="card bg-white mx-auto">
                                                                 <div class="card-body">
@@ -263,10 +294,10 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
+                                                        </div> -->
                                                     </div>
                                                     <!-- Modal -->
-                                                    <div class="modal fade" id="subCategory1-project1-modal"
+                                                    <!-- <div class="modal fade" id="subCategory1-project1-modal"
                                                         data-backdrop="static" data-keyboard="false" tabindex="-1"
                                                         aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                                         <div class="modal-dialog">
@@ -294,10 +325,10 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <h4 class="text-center">Couldn't find the project of your choice? <a
+                                                    </div> -->
+                                                    <!-- <h4 class="text-center">Couldn't find the project of your choice? <a
                                                             href="#" id="subCategory-work" class="text-primary">Suggest
-                                                            your own.</a></h4>
+                                                            your own.</a></h4> -->
                                                 </section>
                                             </div>
                                         </div>
@@ -305,36 +336,6 @@
                                 </section>
                             </div>
 
-                            <div class="tab-pane" id="select-zone" role="tabpanel" aria-labelledby="select-zone-tab">
-                                <section class="mt-5">
-                                    <div class="container ">
-                                        <div id="corporate_form">
-                                            <div class="row justify-content-center">
-                                                <h3>Please Select your Preferred State</h3>
-                                                <section class="pt-3" id="zones">
-                                                    <div id="zonesRow"
-                                                        class="radio-tile-group row justify-content-center">
-                                                        <script id="zoneTemplate" type="text/x-handlebars-template">
-                                                        {{#each highways}}
-                                                        <div class="col-xs-6 col-md-4 mx-md-2  mx-lg-auto  col-lg-3 mt-3">
-                                                            <div class="card bg-white mx-auto">
-                                                                <div class="card-body">
-                                                                    <input id="{{inc @index}}" class="radio-button" type="radio" name="zone" />
-                                                                    <div class="radio-tile zone">
-                                                                        <label for="{{inc @index}}" class="radio-tile-label">{{this}}</label>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        {{/each}}
-                                                    </script>
-                                                    </div>
-                                                </section>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </section>
-                            </div>
                         </div>
                         </form>
                     </div>
